@@ -1,14 +1,13 @@
-#include <avr/io.h>
-#include <util/delay.h>
-#include <avr/interrupt.h>
-#include <avr/eeprom.h>
-#include <avr/pgmspace.h>
-#include <avr/sleep.h>
-#include <avr/wdt.h>
-#include <avr/power.h>
+#include "main.h"
 
-#include <stdlib.h>
+void main() {
+    set_bit(LED_DDR, LED);
 
-int main() {
-    
+    while (1) {
+        set_bit(LED_PORT, LED);
+        _delay_ms(200);
+
+        clear_bit(LED_PORT, LED);
+        _delay_ms(300);
+    }
 }
