@@ -6,6 +6,8 @@
 
 #include "SSD1306.h"
 
+#include "gfx/fedora.xbm"
+
 #define ADDRESS 0x3C
 
 SSD1306  display(ADDRESS, -1, -1);
@@ -29,12 +31,14 @@ void setup()
     display.setFont(ArialMT_Plain_10);
     display.drawString(0, 0, "Fedorator");
 
-    display.display();
     
+    display.drawXbm(64, 0, fedora_width, fedora_height, fedora_bits);
+    display.display();
     
 }
 
 void loop() {
+    /*
     Serial.println("loop");
     digitalWrite(LED_BUILTIN, HIGH);
     delay(200);
@@ -48,4 +52,5 @@ void loop() {
     display.setColor(WHITE);
     display.drawString(0, 32, String(millis()));
     display.display();
+    */
 }
