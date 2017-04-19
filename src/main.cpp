@@ -1,7 +1,7 @@
 #include "Arduino.h"
 
 #ifndef LED_BUILTIN
-#define LED_BUILTIN 13
+#define LED_BUILTIN D0
 #endif
 
 #include "SSD1306.h"
@@ -10,7 +10,7 @@
 
 #define ADDRESS 0x3C
 
-SSD1306  display(ADDRESS, -1, -1);
+SSD1306  display(ADDRESS, D2, D1);
 
 void setup()
 {
@@ -23,7 +23,7 @@ void setup()
     
     
     display.init();
-    display.flipScreenVertically();
+    //display.flipScreenVertically();
     
     display.clear();
 
@@ -38,19 +38,6 @@ void setup()
 }
 
 void loop() {
-    /*
-    Serial.println("loop");
-    digitalWrite(LED_BUILTIN, HIGH);
+    Serial.println("aaaaa");
     delay(200);
-
-    digitalWrite(LED_BUILTIN, LOW);
-    delay(200);
-    
-    //display.clear();
-    display.setColor(BLACK);
-    display.fillRect(0, 32, 32, 64);
-    display.setColor(WHITE);
-    display.drawString(0, 32, String(millis()));
-    display.display();
-    */
 }
