@@ -1,16 +1,12 @@
 #include "Arduino.h"
 
-#ifndef LED_BUILTIN
-#define LED_BUILTIN D0
-#endif
-
 #include "SSD1306.h"
 
 #include "gfx/fedora.xbm"
 
 #define ADDRESS 0x3C
 
-SSD1306  display(ADDRESS, D2, D1);
+SSD1306  display(ADDRESS, I2C_PINS_33_34);
 
 void setup()
 {
@@ -19,6 +15,9 @@ void setup()
     Serial.println();
     Serial.println("begin");
     delay(200);
+    
+    pinMode(LED_BUILTIN, OUTPUT);
+    
     pinMode(LED_BUILTIN, OUTPUT);
     
     
@@ -39,5 +38,8 @@ void setup()
 
 void loop() {
     Serial.println("aaaaa");
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(200);
+    digitalWrite(LED_BUILTIN, LOW);
     delay(200);
 }

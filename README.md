@@ -7,6 +7,9 @@ The Fedorator is a device for writing a live image of
 [Fedora](http://fedoraproject.org/), the Linux distribution, onto a USB
 flash drive.
 
+The [teensy36 branch of my fork of esp8266-oled-ssd1306](https://github.com/Sanqui/esp8266-oled-ssd1306/tree/teensy36)
+is a dependancy.
+
 Concept
 ---
 
